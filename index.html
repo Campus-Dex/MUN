@@ -88,6 +88,20 @@
   .pillar h3 { font-size: 26px; margin-bottom: 6px; }
   .pillar p { color: var(--muted); font-size: 15px; }
 
+  /* Messages */
+  .msg { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start; }
+  .msg + .msg { margin-top: 80px; padding-top: 80px; border-top: 1px solid var(--line); }
+  .msg:nth-of-type(even) { grid-template-columns: 1fr 300px; }
+  .msg:nth-of-type(even) .msg-photo { order: 2; }
+  .msg-photo { position: sticky; top: 104px; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: var(--line); }
+  .msg-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .msg h3 { font-size: clamp(30px, 3.6vw, 40px); margin-bottom: 22px; }
+  .msg p { color: var(--muted); font-size: 17px; max-width: 700px; }
+  .msg p + p { margin-top: 16px; }
+  .msg .sign { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); max-width: 700px; }
+  .msg .sign strong { display: block; font-family: var(--serif); font-size: 26px; font-weight: 600; }
+  .msg .sign span { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+
   /* Committees */
   .committees-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
   .committee { grid-column: span 2; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 34px 30px 28px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
@@ -153,6 +167,10 @@
     section { padding: 76px 0; }
     .hero { padding: 56px 0 72px; }
     .hero .wrap, .about .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .msg, .msg:nth-of-type(even) { grid-template-columns: 1fr; gap: 32px; }
+    .msg + .msg { margin-top: 56px; padding-top: 56px; }
+    .msg:nth-of-type(even) .msg-photo { order: 0; }
+    .msg-photo { position: static; width: min(260px, 70%); }
     .emblem { width: min(300px, 80%); order: -1; }
     .menu-btn { display: block; }
     .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--cream); border-bottom: 1px solid var(--line); padding: 8px 20px 20px; }
@@ -184,6 +202,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
+      <li><a href="#messages">Messages</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#committees">Committees</a></li>
       <li><a href="#executive-board">Executive Board</a></li>
@@ -217,6 +236,50 @@
       <li>AIPPM</li><li>WHO</li><li>UNHRC</li><li>UNGA</li><li>IPC</li>
     </ul>
   </div>
+
+  <section class="messages" id="messages">
+    <div class="wrap">
+      <div class="head center reveal">
+        <p class="eyebrow">Messages</p>
+        <h2>A word of welcome.</h2>
+      </div>
+      <article class="msg reveal">
+        <div class="msg-photo"><img src="Images/director%20general.jpeg" alt="Dr. (Col) A Garg" loading="lazy"></div>
+        <div>
+          <h3>Message from the Director General</h3>
+          <p>I am honoured to welcome all the delegates, faculty members, organisers and distinguished guests to the Model United Nations Conference, a platform for meaningful dialogue, thoughtful deliberation and the exchange of diverse perspectives.</p>
+          <p>In an increasingly interconnected world, platforms such as MUN provide young minds with an opportunity to engage with global issues, understand diverse perspectives and develop the skills of diplomacy, negotiation, critical thinking and constructive dialogue. Such experiences play an important role in preparing students to become informed, responsible and confident global citizens.</p>
+          <p>I commend the MUN &amp; Debate Club and the entire organising team for their dedicated efforts in bringing together this meaningful academic initiative. I am confident that the deliberations, discussions and exchange of ideas during the conference will be enriching and intellectually stimulating for all participants.</p>
+          <p>I wish the conference every success and extend my best wishes to all the delegates for a rewarding and memorable experience.</p>
+          <div class="sign"><strong>Dr. (Col) A Garg</strong><span>Director General, Gateway Education</span></div>
+        </div>
+      </article>
+      <article class="msg reveal">
+        <div class="msg-photo"><img src="Images/rakhesh-aggarwal.jpeg" alt="Shri Rakesh Aggarwal" loading="lazy"></div>
+        <div>
+          <h3>Message from the Desk of the Chairman</h3>
+          <p>It is my pleasure to welcome you to the inaugural edition of the Gateway Education Model United Nations (GEMUN) 2026.</p>
+          <p>Model United Nations is not merely an academic simulation of international diplomacy; it is a transformative platform that encourages young minds to think critically, communicate effectively, engage with diverse perspectives and approach complex global issues with insight and responsibility. It provides students with an opportunity to move beyond the classroom, understand the intricacies of international affairs and develop the confidence to articulate ideas, negotiate perspectives and work towards constructive outcomes.</p>
+          <p>At Gateway Education, we believe that education is most meaningful when it empowers students to become thoughtful, articulate, and responsible leaders. I am confident that GEMUN 2026 will embody this spirit by bringing together enthusiastic delegates in an environment of intellectual exchange, healthy debate, collaboration, and learning.</p>
+          <p>I commend the efforts of the organising team, Executive Board, faculty members and student volunteers whose dedication has made this initiative possible. I also extend my best wishes to every delegate participating in the conference and encourage you to make the most of this opportunity to learn, engage and grow.</p>
+          <p>I warmly welcome you all to GEMUN 2026 and wish you an intellectually stimulating, enriching and memorable conference.</p>
+          <p>With my best wishes,</p>
+          <div class="sign"><strong>Shri Rakesh Aggarwal</strong><span>Chairman, Gateway Education</span></div>
+        </div>
+      </article>
+      <article class="msg reveal">
+        <div class="msg-photo"><img src="Images/vishal-jain.jpeg" alt="Dr. Vishal Jain" loading="lazy"></div>
+        <div>
+          <h3>Message from the Principal</h3>
+          <p>It is my pleasure to extend a warm welcome to all participants of Gateway Education Model United Nations (GEMUN) 2026.</p>
+          <p>A conference such as GEMUN provides students with an opportunity to step beyond the classroom and develop essential skills in public speaking, diplomacy, research, negotiation and collaborative problem-solving. More importantly, it encourages young minds to approach complex issues with curiosity, empathy and a spirit of constructive dialogue.</p>
+          <p>I hope that every delegate leaves the conference with new perspectives, meaningful experiences and greater confidence in their ability to make a difference.</p>
+          <p>My best wishes to the entire GEMUN 2026 team and all participating delegates for a successful and memorable conference.</p>
+          <div class="sign"><strong>Dr. Vishal Jain</strong><span>Principal, Gateway Institute of Engineering and Technology</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <section class="about" id="about">
     <div class="wrap">
