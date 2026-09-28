@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GEMUN | Gateway Education Model United Nations</title>
-<meta name="description" content="GEMUN, the Gateway Education Model United Nations, Delhi NCR & Sonipat. Discuss. Diplomacy. Impact.">
+<meta name="description" content="GEMUN 2026, the annual Gateway Education Model United Nations conference. 10 & 11 October 2026, Gateway Education Campus, Delhi NCR, Sonipat. Discuss. Diplomacy. Impact.">
 <link rel="icon" href="Images/logo-circle.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,6 +70,9 @@
   .motto i { width: 1px; height: 18px; background: var(--orange); }
   .hero .lede { margin-bottom: 36px; }
   .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 18px 40px; margin: -12px 0 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .facts dt { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .facts dd { font-family: var(--serif); font-size: 22px; font-weight: 600; }
   .emblem { position: relative; justify-self: center; width: min(420px, 100%); aspect-ratio: 1; }
   .emblem::before { content: ""; position: absolute; inset: -28px; border-radius: 50%; border: 1px dashed rgba(238, 106, 31, .45); }
   .emblem img { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 30px 70px -25px rgba(90, 45, 10, .35); }
@@ -82,6 +85,7 @@
   .about { background: var(--paper); }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
   .about p + p { margin-top: 16px; }
+  .tagline { margin-top: 24px; font-family: var(--serif); font-size: 24px; font-style: italic; color: var(--orange-dark); }
   .pillars { display: grid; gap: 18px; }
   .pillar { padding: 24px 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--cream); }
   .pillar h3 { color: var(--orange-dark); }
@@ -106,7 +110,7 @@
   .committees-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
   .committee { grid-column: span 2; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 34px 30px 28px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
   .committee:nth-child(4) { grid-column: 2 / span 2; }
-  .committee::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--orange); }
+  .committee::before, .fee-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--orange); }
   .committee:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -28px rgba(60, 30, 5, .35); }
   .committee .abbr { font-family: var(--serif); font-size: 50px; font-weight: 700; line-height: 1; }
   .committee .full { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); margin: 10px 0 22px; }
@@ -127,6 +131,19 @@
   .member h3 { font-size: 24px; margin-bottom: 4px; }
   .member .role { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
   .member .cred { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+  /* Fees & Prizes */
+  .fees-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .fee-card { position: relative; overflow: hidden; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 34px 30px 18px; }
+  .fee-card h3 { font-size: 30px; margin-bottom: 14px; }
+  .fee-card table { width: 100%; border-collapse: collapse; }
+  .fee-card th, .fee-card td { padding: 14px 0; border-top: 1px solid var(--line); vertical-align: baseline; }
+  .fee-card th { text-align: left; font-size: 15px; font-weight: 400; color: var(--muted); }
+  .fee-card td { text-align: right; padding-left: 16px; white-space: nowrap; font-family: var(--serif); font-size: 26px; font-weight: 700; }
+  .fee-card td small { font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .notes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 40px; margin-top: 36px; list-style: none; font-size: 15px; color: var(--muted); }
+  .notes li::before { content: "◆"; color: var(--orange); font-size: 9px; margin-right: 10px; vertical-align: middle; }
+  .notes strong { color: var(--ink); font-weight: 600; }
 
   /* Contact */
   .contact { background: var(--ink); color: #fff; }
@@ -167,6 +184,7 @@
     section { padding: 76px 0; }
     .hero { padding: 56px 0 72px; }
     .hero .wrap, .about .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .fees-grid { grid-template-columns: 1fr; }
     .msg, .msg:nth-of-type(even) { grid-template-columns: 1fr; gap: 32px; }
     .msg + .msg { margin-top: 56px; padding-top: 56px; }
     .msg:nth-of-type(even) .msg-photo { order: 0; }
@@ -206,6 +224,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#committees">Committees</a></li>
       <li><a href="#executive-board">Executive Board</a></li>
+      <li><a href="#fees">Fees &amp; Prizes</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSftxB_WboWOotYktK_I1M_g9DYMKX2eFzwgZ7lhQCfpIzdlig/viewform" target="_blank" rel="noopener">Register</a></li>
     </ul>
@@ -216,10 +235,15 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Gateway Education &middot; Delhi NCR, Sonipat</p>
+        <p class="eyebrow">GEMUN 2026 &middot; Annual Model United Nations Conference</p>
         <h1>Gateway Education <em>Model United Nations</em></h1>
         <div class="motto">Discuss <i></i> Diplomacy <i></i> Impact</div>
-        <p class="lede">Five committees. Five pressing global and national agendas. One platform for young delegates to research, negotiate and lead &mdash; guided by an experienced Executive Board.</p>
+        <p class="lede">Be a diplomat. Make an impact. Shape the future. Five committees and five pressing global and national agendas, guided by an experienced Executive Board.</p>
+        <dl class="facts">
+          <div><dt>Dates</dt><dd>10 &amp; 11 October 2026</dd></div>
+          <div><dt>Venue</dt><dd>Gateway Education Campus, Sonipat</dd></div>
+          <div><dt>Register by</dt><dd>6 October 2026</dd></div>
+        </dl>
         <div class="actions">
           <a class="btn btn-primary" href="#committees">Explore Committees &rarr;</a>
           <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSftxB_WboWOotYktK_I1M_g9DYMKX2eFzwgZ7lhQCfpIzdlig/viewform" target="_blank" rel="noopener">Register Now</a>
@@ -286,8 +310,9 @@
       <div class="reveal">
         <p class="eyebrow">About GEMUN</p>
         <h2>Where debate becomes diplomacy.</h2>
-        <p class="lede">GEMUN is the Model United Nations conference of Gateway Education, Delhi NCR &amp; Sonipat. Delegates step into the shoes of nations, political parties and journalists to tackle the questions shaping our world &mdash; from outer space governance to AI-driven warfare.</p>
+        <p class="lede">GEMUN 2026 is the annual Model United Nations conference of Gateway Education, Delhi NCR &amp; Sonipat. It brings together young minds from across institutions to deliberate, negotiate and find meaningful solutions to today&rsquo;s most pressing issues &mdash; from outer space governance to AI-driven warfare.</p>
         <p class="lede">Beyond the resolutions, GEMUN is about building the skills that last: public speaking, critical research, negotiation and the confidence to lead a room.</p>
+        <p class="tagline">For future leaders. By future leaders.</p>
       </div>
       <div class="pillars reveal">
         <div class="pillar">
@@ -341,7 +366,7 @@
         </article>
         <article class="committee reveal">
           <div class="abbr">IPC</div>
-          <div class="full">International Press Conference</div>
+          <div class="full">International Press Corps</div>
           <div class="label">Agenda</div>
           <p class="agenda">Coverage of Committee Proceedings, Press Conferences, and Crisis Reporting.</p>
           <div class="chair"><img src="Images/eb/5.jpg" alt=""><div><small>Executive Board</small>Ms. Aditi Mishra</div></div>
@@ -392,6 +417,44 @@
     </div>
   </section>
 
+  <section class="fees" id="fees">
+    <div class="wrap">
+      <div class="head center reveal">
+        <p class="eyebrow">Registration &amp; Awards</p>
+        <h2>Fees &amp; prizes.</h2>
+        <p class="lede">Register on your own, or come as a delegation of four or more for a lower fee per person.</p>
+      </div>
+      <div class="fees-grid">
+        <div class="fee-card reveal">
+          <h3>Individual</h3>
+          <table>
+            <tr><th scope="row">Gateway Education Students</th><td>&#8377;1,000</td></tr>
+            <tr><th scope="row">External Delegates</th><td>&#8377;1,300</td></tr>
+          </table>
+        </div>
+        <div class="fee-card reveal">
+          <h3>Delegations of 4+</h3>
+          <table>
+            <tr><th scope="row">Gateway Education Students</th><td>&#8377;800<small>/person</small></td></tr>
+            <tr><th scope="row">External Delegation</th><td>&#8377;1,100<small>/person</small></td></tr>
+          </table>
+        </div>
+        <div class="fee-card reveal">
+          <h3>Cash Prizes</h3>
+          <table>
+            <tr><th scope="row">Best Delegate</th><td>&#8377;5,100</td></tr>
+            <tr><th scope="row">International Press</th><td>&#8377;3,100</td></tr>
+            <tr><th scope="row">High Commendation</th><td>&#8377;2,100</td></tr>
+          </table>
+        </div>
+      </div>
+      <ul class="notes reveal">
+        <li><strong>Last date to register:</strong> 6 October 2026</li>
+        <li>On-campus accommodation available</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="reveal">
@@ -404,9 +467,13 @@
         </div>
       </div>
       <div class="channels reveal">
-        <a class="channel" href="mailto:ge.mun@gateway.edu.in">
+        <a class="channel" href="tel:+919996110867">
+          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span><small>Outreach Team</small><strong>+91 99961 10867</strong></span>
+        </a>
+        <a class="channel" href="mailto:ge.mun@gatewayedu.in">
           <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-          <span><small>Email</small><strong>ge.mun@gateway.edu.in</strong></span>
+          <span><small>Email</small><strong>ge.mun@gatewayedu.in</strong></span>
         </a>
         <a class="channel" href="https://www.instagram.com/ge.modelun/" target="_blank" rel="noopener">
           <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></span>
@@ -420,7 +487,7 @@
 <footer>
   <div class="wrap">
     <a href="#top" class="brand"><img src="Images/logo-circle.png" alt=""><span>GEMUN</span></a>
-    <p>&copy; <span id="year">2026</span> Gateway Education Model United Nations &middot; Delhi NCR, Sonipat</p>
+    <p>&copy; <span id="year">2026</span> Gateway Education Model United Nations &middot; Delhi NCR, Sonipat &middot; ISO 9001:2015 &amp; ISO 14001:2015 Certified</p>
   </div>
 </footer>
 
